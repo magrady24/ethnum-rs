@@ -48,7 +48,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     build
         .compiler("clang")
         .file(intrinsics_ir_path)
-        .flag("-mllvm -opaque-pointers")
+        .flag("-mllvm").flag("-opaque-pointers")
         .opt_level(3);
 
     let linker_plugin_lto =
